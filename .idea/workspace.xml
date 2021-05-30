@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ffed435d-3a92-42d0-b453-136f8cee015c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TownTools.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Apps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controlTownPack/ControllerPersonClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controlTownPack/ControllerTownS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controlTownPack/CreateTownAndPerson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/readIO/CretatePost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/townInfoPackega/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/townInfoPackega/TownT.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tG59gI4oGa6ngPBhZXZUxAnwGf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="C:/1vs/visualvm_201/bin/visualvm.exe" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Apps" />
+      <module name="TownTools" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ffed435d-3a92-42d0-b453-136f8cee015c" name="Default Changelist" comment="" />
+      <created>1622382435672</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622382435672</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1179" y="136" key="#Project_Structure" timestamp="1622386760176">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1179" y="136" key="#Project_Structure/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622386760176" />
+    <state x="-1506" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622387898852">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1506" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622387898852" />
+    <state x="-1155" y="255" key="#com.intellij.ide.util.MemberChooser" timestamp="1622386818004">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1155" y="255" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622386818004" />
+    <state x="-1231" y="323" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1622387896666">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1231" y="323" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622387896666" />
+    <state x="-1251" y="308" key="#com.intellij.refactoring.memberPushDown.PushDownDialog" timestamp="1622383159476">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1251" y="308" key="#com.intellij.refactoring.memberPushDown.PushDownDialog/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622383159476" />
+    <state x="-1306" y="133" key="CommitChangelistDialog2" timestamp="1622388074544">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1306" y="133" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622388074544" />
+    <state x="-1459" y="182" key="SettingsEditor" timestamp="1622383907355">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1459" y="182" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622383907355" />
+    <state x="-1297" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1622384404153">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1297" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622384404153" />
+  </component>
+</project>
