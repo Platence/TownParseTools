@@ -1,6 +1,7 @@
 import controlTownPack.CreateTownAndPerson;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
@@ -25,20 +26,35 @@ public class Apps {
                 .getAllList();
 
         HttpClient httpClient = HttpClients.createDefault();
-        HttpPost httpPost;
+        HttpGet httpGet;
         HttpResponse httpResponse;
 
         for(Person person : listPerson){
             for(TownT town : list){
-                httpPost = new HttpPost("https://www.google.com");
-                httpPost.setHeader("none", CretatePost.getpostFromTown(person,town));
-                httpResponse = httpClient.execute(httpPost);
+                httpGet = new HttpGet(CretatePost.getpostFromTown(person,town));
+                //httpPost.setHeader("qwe", CretatePost.getpostFromTown(person,town));
+                httpResponse = httpClient.execute(httpGet);
                 String body = EntityUtils.toString(httpResponse.getEntity());
-                System.out.println(body);
+                String[] level1 = body.split("Куда");
+                for(String x : level1){
+                    if(x.contains("Маршрут")){
+                        String[] level2 = x.split("\\) Маршрут");
+                        for(String x2 : level2){
+                            if(x2.contains("<span")){
+                                String [] level3 = x2.split("\\(");
+                                for(String x3 : level3){
+                                    System.out.println(x3);
+                                    System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+                                }
+                            }
+
+                        }
+                    }
+
+                }
                 break;
             }
         }
-
 
     }
 }
