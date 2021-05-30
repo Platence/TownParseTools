@@ -21,7 +21,7 @@ public class ReadXlsx {
 
         System.out.println("Загрузка городов...");
 
-        Thread.sleep(1000);
+        Thread.sleep(500);
 
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
