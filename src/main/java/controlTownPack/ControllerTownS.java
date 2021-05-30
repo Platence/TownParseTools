@@ -9,7 +9,7 @@ public class ControllerTownS {
     private ArrayList<TownT> allTown;
 
     public ControllerTownS() {
-        allTown = new ArrayList<>();
+        allTown = new ArrayList();
     }
 
     public boolean addPosition(TownT town){

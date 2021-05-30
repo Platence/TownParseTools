@@ -1,7 +1,9 @@
 package controlTownPack;
 
-import townInfoPackega.Person;
-import townInfoPackega.TownT;
+import interfaces.PathsAndCellAdress;
+import readIO.ReadXlsx;
+
+import java.io.IOException;
 
 public class CreateTownAndPerson {
 
@@ -12,12 +14,14 @@ public class CreateTownAndPerson {
     }
 
     private void generateTown(ControllerTownS o){
-        TownT town1 = new TownT("Тульская обл","Ленинский р-он","Ленина 20","Тула");
-        TownT town2 = new TownT("Вороонежская обл","Ленинский р-он","Ленина 20","Тула");
-        o.addPosition(town1);
-        o.addPosition(town2);
-
-        // Заменить
+        ReadXlsx readXlsx = new ReadXlsx();
+        try {
+            readXlsx.openBook(PathsAndCellAdress.path,o);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public ControllerPersonClass createPerson(){
@@ -27,8 +31,15 @@ public class CreateTownAndPerson {
     }
 
     private void generatePerson(ControllerPersonClass o){
-        Person person1 = new Person("Вася","Тула");
-        o.addPosition(person1);
+
+        ReadXlsx readXlsx = new ReadXlsx();
+        try {
+            readXlsx.openBook(PathsAndCellAdress.path,o);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }

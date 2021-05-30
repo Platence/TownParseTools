@@ -9,7 +9,7 @@ public class ControllerPersonClass {
     private ArrayList<Person> listPerson;
 
     public ControllerPersonClass(){
-        listPerson = new ArrayList<>();
+        listPerson = new ArrayList();
     }
 
     public boolean addPosition(Person person){
@@ -21,7 +21,7 @@ public class ControllerPersonClass {
     }
 
     public ArrayList<Person> getAllList(){
-        return new ArrayList<>(listPerson);
+        return new ArrayList(listPerson);
     }
 
 }
