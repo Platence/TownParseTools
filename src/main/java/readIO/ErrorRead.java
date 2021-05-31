@@ -7,7 +7,8 @@ import java.util.Scanner;
 
 public class ErrorRead {
 
-    private static final String path = "D:\\metaVALUE\\ERRORS.txt";
+    private static final String path = "????????????";
+    // Your PAth!
 
     public ArrayList<StringBuilder> getList() throws FileNotFoundException {
 

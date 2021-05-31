@@ -6,19 +6,23 @@ import townInfoPackega.Person;
 import townInfoPackega.TownT;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Apps {
-
-
-
 
     public static void main(String[] args){
 
       // startFirstHalf();
 
-        startSecondHalf();
+      //  startSecondHalf();
+
+       /*
+        В процессе выполнения запросов
+        Возвращались ошибки
+        Они заносятся в отдельный файл
+
+        Методы выполнять по очереди
+       */
     }
 
     public static void startFirstHalf(){
