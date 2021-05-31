@@ -55,6 +55,6 @@ public class Apps {
         }
         MoreTownThread moreTownThread = new MoreTownThread(list);
         moreTownThread.start();
-        System.out.println("Работа программы завершена");
+        System.out.println("Работа по распределению потоков завершена");
     }
 }

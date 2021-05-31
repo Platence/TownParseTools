@@ -53,16 +53,8 @@ public class TempBase {
         return defoltCity;
     }
 
-    public void setDefoltCity(String defoltCity) {
-        this.defoltCity = defoltCity;
-    }
-
     public String getMoveToCity() {
         return moveToCity;
-    }
-
-    public void setMoveToCity(String moveToCity) {
-        this.moveToCity = moveToCity;
     }
 
     public String getKm() {

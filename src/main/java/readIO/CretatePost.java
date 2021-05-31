@@ -13,6 +13,7 @@ public class CretatePost {
 
         StringBuilder sb = new StringBuilder();
         sb.append(TempBase.getWordAlready(temp));
+
         if(sb.toString().equals("NON")){
             sb.setLength(0);
         }
@@ -22,6 +23,7 @@ public class CretatePost {
         }
 
         String s6 = extendedWords(o2.getTown(),o2);
+
         if(s6.contains("/")){
             s6 = "";
             System.out.println(o2.getStreet());
@@ -40,6 +42,10 @@ public class CretatePost {
     }
 
     public static String extendedWords(String town,TownT o2){
+
+        /**
+         * Исключения
+         */
 
         switch (town){
             case "г.Белев" :           return " ";

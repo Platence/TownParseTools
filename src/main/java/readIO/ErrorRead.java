@@ -2,7 +2,6 @@ package readIO;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,6 +22,7 @@ public class ErrorRead {
         }
 
         sc.close();
+        System.out.println("Чтение файла прошло успешно. Создано " + list.size() + " объектов");
         return list;
     }
 }
