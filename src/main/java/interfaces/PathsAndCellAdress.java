@@ -2,7 +2,8 @@ package interfaces;
 
 public class PathsAndCellAdress {
 
-    public final static String path = "C:\\Stress_Test\\График\\06 График ПИ ТМЦ НЧД июнь.xlsx";
+    public final static String path = "????????????????????????????????";
+    // Type your adress
 
     public static final int SheetTownIndex = 3;
     public static final int cellAreaCell = 6;

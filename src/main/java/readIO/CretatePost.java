@@ -8,7 +8,6 @@ public class CretatePost {
 
     private static volatile String defoltReqhttp = "https://www.google.com/maps/dir/";
 
-
     public static String getpostFromTown(Person o1, TownT o2, TempBase temp){
 
         StringBuilder sb = new StringBuilder();
@@ -32,8 +31,8 @@ public class CretatePost {
         sb.append(defoltReqhttp);
         sb.append(o1.getDefoltcity());
         sb.append("/");
-        sb.append(o2.getArea()+ "+");
-        sb.append(o2.getTown()+"+");
+        sb.append(o2.getArea()).append("+");
+        sb.append(o2.getTown()).append("+");
         if(!o2.getTown().contains("п.") && !o2.getTown().contains("рп.")){
             sb.append(s6.replace(",",""));
         }
@@ -43,8 +42,8 @@ public class CretatePost {
 
     public static String extendedWords(String town,TownT o2){
 
-        /**
-         * Исключения
+        /*
+          Исключения
          */
 
         switch (town){

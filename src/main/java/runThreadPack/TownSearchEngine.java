@@ -11,6 +11,7 @@ import townInfoPackega.TownT;
 import writeIO.TempBase;
 import writeIO.WriteFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class TownSearchEngine extends Thread{
@@ -34,122 +35,130 @@ public class TownSearchEngine extends Thread{
     public void run(){
 
         try {
-
             HttpClient httpClient = HttpClients.createMinimal();
             HttpGet httpGet;
             HttpResponse httpResponse;
-            int count = 0;
+            // int count = 0;
+
             StringBuilder result = new StringBuilder();
-
-
 
             for (TownT town : this.getListTown()) {
 
-                    result.setLength(0);String kilometrs = "";
+                    result.setLength(0);String kmkm = "";
 
-                    TempBase temp = new TempBase(this.person.getDefoltcity(),town.getArea()+town.getTown()+town.getStreet());
+                    TempBase temp = new TempBase(this.person.getDefoltcity(),
+                            town.getArea()+town.getTown()+town.getStreet());
+
                     String request = CretatePost.getpostFromTown(person, town,temp);
 
                     if( ! request.contains("ready") ) {
+
                         try {
+
                             httpGet = new HttpGet(request);
                             httpResponse = httpClient.execute(httpGet);
                             String body = EntityUtils.toString(httpResponse.getEntity());
 
-
                             String[] parLev1 = body.split("км");
 
                             if (parLev1[0].contains("Включите JavaScript")) {
-                                System.out.println("Ошибка, Текст запроса : ");
-                                System.out.println(request);
-                                WriteFile ff = new WriteFile();
-                                try {
-                                    ff.saveError(this.person.getName() + "*" + request + System.lineSeparator());
-                                } catch (Exception e) {
-                                    System.out.println("Ошибка сохранения");
-                                }
+                                takeError1(request);
                                 continue;
                             }
 
-                            char[] xxx = parLev1[0].toCharArray();
+                            parseMeta(parLev1,result);
+                            kmkm = result.reverse().toString();
 
-                            for (int i = xxx.length - 1; i > 0; i--) {
-                                if (xxx[i] == '\"') {
-                                    break;
-                                }
-                                result.append(xxx[i]);
+                            if (kmkm.length() > 20) {
+                                kmkm = "-99999";
+                                // Error - write in file how -99999
                             }
 
-                            kilometrs = result.reverse().toString();
-
-                            if (kilometrs.length() > 20) {
-                                kilometrs = "-99999";
-                            }
-                            temp.setKm(kilometrs);
-                            count++;
-                            System.out.println("Нить " + person.getName() + " Запрос № " + count);
+                            temp.setKm(kmkm);
+                            // count++;
+                            // System.out.println("Нить " + person.getName() + " Запрос № " + count);
+                            // info
                         }
+
                         catch (Exception e){
-                            System.out.println("Ошибка запроса для " + request);
-                            WriteFile ff = new WriteFile();
-                            try {
-                                ff.saveError(this.person.getName() + "*" + request + System.lineSeparator());
-                            }
-                            catch (Exception e1) {
-                                System.out.println("Ошибка сохранения");
-                            }
+                            takeError1(request);
                             continue;
                         }
                     }
 
+
                     if(request.contains("ready")){
-                        kilometrs = temp.getKm();
-                        System.out.println("Для сотрудника : " + this.person.getName());
-                        System.out.println("Место назначения : " + town.getTown() + " " + town.getStreet());
-                        System.out.println("Уже расчитано расстояние : " + temp.getKm());
+                        kmkm = temp.getKm();
+                        printInfo(town,temp);
                     }
 
-                    WriteFile ff = new WriteFile();
-                    StringBuilder sb = new StringBuilder();
-                    sb.append(town.getArea());
-                    sb.append(town.getTown());
-                    sb.append(town.getStreet());
-                    sb.append("*");
-                    sb.append(this.person.getName());
-                    sb.append("*");
-                    sb.append(kilometrs);
-                    sb.append(System.lineSeparator());
+                    saveV(town,kmkm);
+                    // Save Information
+                   // END LOG
 
-                    ff.saveFile(this.person, sb.toString());
+                try { sleep(2); }
+                catch (InterruptedException e) { e.printStackTrace(); }
 
-                    sb.setLength(0);
-
-                try {
-                    Thread.currentThread().sleep(2);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+            } // END FOR
         }
-        catch (Exception e){
+        catch (Exception e){ e.printStackTrace(); }
+
+    }
+
+    private void printInfo(TownT town,TempBase temp){
+        System.out.println("Для сотрудника : " + this.person.getName());
+        System.out.println("Место назначения : " + town.getTown() + " " + town.getStreet());
+        System.out.println("Уже расчитано расстояние : " + temp.getKm());
+    }
+
+    private void takeError1(String request){
+        System.out.println("Ошибка, Текст запроса : ");
+        System.out.println(request);
+        WriteFile ff = new WriteFile();
+        try {
+            ff.saveError(this.person.getName() + "*" + request + System.lineSeparator());
+        } catch (Exception e) {
+            System.out.println("Ошибка сохранения");
+        }
+    }
+
+    private void parseMeta(String [] parLev1, StringBuilder result){
+
+        char[] xxx = parLev1[0].toCharArray();
+
+        for (int i = xxx.length - 1; i > 0; i--) {
+            if (xxx[i] == '\"') {
+                break;
+            }
+            result.append(xxx[i]);
+        }
+    }
+
+    private void saveV(TownT town,String kilometrs){
+
+        WriteFile ff = new WriteFile();
+        StringBuilder sb = new StringBuilder();
+        sb.append(town.getArea());
+        sb.append(town.getTown());
+        sb.append(town.getStreet());
+        sb.append("*");
+        sb.append(this.person.getName());
+        sb.append("*");
+        sb.append(kilometrs);
+        sb.append(System.lineSeparator());
+
+        try {
+            ff.saveFile(this.person, sb.toString());
+        }
+
+        catch (IOException e) {
             e.printStackTrace();
         }
-
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
+        sb.setLength(0);
     }
 
     public ArrayList<TownT> getListTown() {
         return listTown;
     }
 
-    public void setListTown(ArrayList<TownT> listTown) {
-        this.listTown = listTown;
-    }
 }

@@ -14,7 +14,7 @@ public class Apps {
 
 
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args){
 
       // startFirstHalf();
 
@@ -45,16 +45,19 @@ public class Apps {
     }
 
     public static void startSecondHalf(){
+
         System.out.println("Открытие процедуры чтения ошибочных запросов");
         ArrayList<StringBuilder> list = null;
+
         try {
             list = new ErrorRead().getList();
-        } catch (FileNotFoundException e) {
+        }
+
+        catch (FileNotFoundException e) {
             e.printStackTrace();
             System.out.println("Ошибка, файл не найден");
         }
         MoreTownThread moreTownThread = new MoreTownThread(list);
         moreTownThread.start();
-        System.out.println("Работа по распределению потоков завершена");
     }
 }

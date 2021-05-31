@@ -38,7 +38,7 @@ public class ReadXlsx {
                 String s = row.getCell(PathsAndCellAdress.cellAreaCell).toString();
                 String s1 = row.getCell(PathsAndCellAdress.cellTownCell).toString();
                 String s2 = row.getCell(PathsAndCellAdress.cellStreet).toString();
-
+                // Can use StringBuilder
                 TownT townT = new TownT(s,"",s2,s1);
                 o.addPosition(townT);
 
@@ -72,6 +72,7 @@ public class ReadXlsx {
                 try {
                     String s = row.getCell(PathsAndCellAdress.cellFirtstName).toString();
                     String s1 = row.getCell(PathsAndCellAdress.cellDefoltCity).toString();
+                    // Can use StringBuilder
                     Person person = new Person(s,s1);
                     o.addPosition(person);
                     count ++;

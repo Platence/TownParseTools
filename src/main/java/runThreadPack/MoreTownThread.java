@@ -39,14 +39,16 @@ public class MoreTownThread extends Thread{
 
             int index = 0; // Удаление символов с конца
 
-            while (true){
-                // DANGER!!!!!!!!!!!!!!!!!!!!!
-                String result = "ERROR";
-                // Or Return kilometrs
+            // DANGER while !!!!!!!!!!!!!!!!!!!!!
 
-                try {
-                    result = new RequesHandler().result(
-                             new CreateSecondPost().gerExtendRequest(sb,index));
+
+            while (true){
+
+                String result = "ERROR";
+                // Or Return kmkm
+
+                try{
+                    result = new RequesHandler().result(new CreateSecondPost().gerExtendRequest(sb,index));
                 }
 
                 catch (IOException e) {
@@ -56,23 +58,29 @@ public class MoreTownThread extends Thread{
 
                 if (result.equals("ERROR")){
                     index++;
+                    continue;
+                    // LOOP
                 }
 
-                else {
-                    WriteFile ff = new WriteFile();
-                    String rr = new CreateSecondPost().getAdressstatic(sb);
-                    rr+="*";
-                    rr+= new CreateSecondPost().getPersonFromErrorMessage(sb);
-                    rr+="*";
-                    rr+=result;
-                    rr+=System.lineSeparator(); // Deprecated 7 lvl +
-                    ff.saveAfterError(rr);
-                    break;
-                }
+                saveF(sb,result);
+                break;
+                // IF ALL GOOD, WHILE HAS BRAKE
+
             }
 
         }
 
+    }
+
+    private void saveF(StringBuilder sb,String result){
+        WriteFile ff = new WriteFile();
+        String rr = new CreateSecondPost().getAdressstatic(sb);
+        rr+="*";
+        rr+= new CreateSecondPost().getPersonFromErrorMessage(sb);
+        rr+="*";
+        rr+=result;
+        rr+=System.lineSeparator(); // Deprecated 7 lvl +
+        ff.saveAfterError(rr);
     }
 
 
