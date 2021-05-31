@@ -78,7 +78,7 @@ public class ReadXlsx {
                 }
                 catch (NullPointerException e){
                     // ?
-                    System.out.println("NULL, continue...");
+                    //System.out.println("NULL, continue...");
                 }
 
             }

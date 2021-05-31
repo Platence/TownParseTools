@@ -8,6 +8,7 @@ import org.apache.http.util.EntityUtils;
 import readIO.CretatePost;
 import townInfoPackega.Person;
 import townInfoPackega.TownT;
+import writeIO.TempBase;
 import writeIO.WriteFile;
 
 import java.util.ArrayList;
@@ -25,6 +26,8 @@ public class TownSearchEngine extends Thread{
     /**
      * Класс подразумевает обработку до 1000 запросов в отдельном потоке
      * для каждой персоны
+     * Ожидается проверка на существующий запрос в стороннем статик классе
+     * В таком случае расстояние присвоится сразу же
      */
 
     @Override
@@ -36,40 +39,75 @@ public class TownSearchEngine extends Thread{
             HttpGet httpGet;
             HttpResponse httpResponse;
             int count = 0;
+            StringBuilder result = new StringBuilder();
+
+
 
             for (TownT town : this.getListTown()) {
-                    httpGet = new HttpGet(CretatePost.getpostFromTown(person, town));
-                    httpResponse = httpClient.execute(httpGet);
-                    String body = EntityUtils.toString(httpResponse.getEntity());
 
-                    String[] parLev1 = body.split("км");
+                    result.setLength(0);String kilometrs = "";
 
-                    if(parLev1[0].contains("Включите JavaScript")){
-                        System.out.println("Ошибка чтения, повторная попытка");
-                        System.out.println("Текст запроса : ");
-                        System.out.println(CretatePost.getpostFromTown(person, town));
-                        continue;
-                    }
+                    TempBase temp = new TempBase(this.person.getDefoltcity(),town.getArea()+town.getTown()+town.getStreet());
+                    String request = CretatePost.getpostFromTown(person, town,temp);
 
-                    char[] xxx = parLev1[0].toCharArray();
-                    StringBuilder result = new StringBuilder();
+                    if( ! request.contains("ready") ) {
+                        try {
+                            httpGet = new HttpGet(request);
+                            httpResponse = httpClient.execute(httpGet);
+                            String body = EntityUtils.toString(httpResponse.getEntity());
 
-                    for (int i = xxx.length - 1; i > 0; i--) {
-                        if (xxx[i] == '\"') {
-                            break;
+
+                            String[] parLev1 = body.split("км");
+
+                            if (parLev1[0].contains("Включите JavaScript")) {
+                                System.out.println("Ошибка, Текст запроса : ");
+                                System.out.println(request);
+                                WriteFile ff = new WriteFile();
+                                try {
+                                    ff.saveError(this.person.getName() + "*" + request + System.lineSeparator());
+                                } catch (Exception e) {
+                                    System.out.println("Ошибка сохранения");
+                                }
+                                continue;
+                            }
+
+                            char[] xxx = parLev1[0].toCharArray();
+
+                            for (int i = xxx.length - 1; i > 0; i--) {
+                                if (xxx[i] == '\"') {
+                                    break;
+                                }
+                                result.append(xxx[i]);
+                            }
+
+                            kilometrs = result.reverse().toString();
+
+                            if (kilometrs.length() > 20) {
+                                kilometrs = "-99999";
+                            }
+                            temp.setKm(kilometrs);
+                            count++;
+                            System.out.println("Нить " + person.getName() + " Запрос № " + count);
                         }
-                        result.append(xxx[i]);
+                        catch (Exception e){
+                            System.out.println("Ошибка запроса для " + request);
+                            WriteFile ff = new WriteFile();
+                            try {
+                                ff.saveError(this.person.getName() + "*" + request + System.lineSeparator());
+                            }
+                            catch (Exception e1) {
+                                System.out.println("Ошибка сохранения");
+                            }
+                            continue;
+                        }
                     }
 
-
-                    String kilometrs = result.reverse().toString();
-
-                    if(kilometrs.length()>20){
-                        kilometrs = "-99999";
+                    if(request.contains("ready")){
+                        kilometrs = temp.getKm();
+                        System.out.println("Для сотрудника : " + this.person.getName());
+                        System.out.println("Место назначения : " + town.getTown() + " " + town.getStreet());
+                        System.out.println("Уже расчитано расстояние : " + temp.getKm());
                     }
-                    count++;
-                    System.out.println("Нить " + person.getName() + " Запрос № " + count);
-
 
                     WriteFile ff = new WriteFile();
                     StringBuilder sb = new StringBuilder();
@@ -85,8 +123,6 @@ public class TownSearchEngine extends Thread{
                     ff.saveFile(this.person, sb.toString());
 
                     sb.setLength(0);
-                    result.setLength(0);
-
 
                 try {
                     Thread.currentThread().sleep(2);

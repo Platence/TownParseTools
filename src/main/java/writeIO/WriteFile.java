@@ -27,4 +27,21 @@ public class WriteFile {
 
         fw.close();
     }
+
+    public void saveError(String result) throws IOException {
+        File f = new File(pathEx+"ERRORS"+".txt");
+
+        if(!f.exists()){
+            try {
+                f.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        FileWriter fw = new FileWriter(f,true);
+        fw.write(result);
+
+        fw.close();
+    }
 }
