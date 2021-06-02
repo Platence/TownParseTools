@@ -18,6 +18,7 @@ public class Apps {
     }
 
     public static void startFirstHalf(){
+
         ArrayList<TownT> list = new CreateTownAndPerson()
                 .createTowns()
                 .getAllList();
@@ -25,7 +26,6 @@ public class Apps {
         ArrayList<Person> listPerson = new CreateTownAndPerson()
                 .createPerson()
                 .getAllList();
-
 
 
         for(Person person : listPerson){
