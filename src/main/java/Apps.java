@@ -10,15 +10,10 @@ public class Apps {
     public static void main(String[] args){
 
        startFirstHalf();
-
-      //  startSecondHalf();
-
        /*
         В процессе выполнения запросов
         Возвращались ошибки
         Они заносятся в отдельный файл
-
-        Методы выполнять по очереди
        */
     }
 

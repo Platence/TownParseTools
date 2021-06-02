@@ -1,28 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffed435d-3a92-42d0-b453-136f8cee015c" name="Default Changelist" comment="1.06.2021 test Ivanov">
-      <change afterPath="$PROJECT_DIR$/src/main/java/runThreadPack/EngineEx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/runThreadPack/infoPack/InernS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/runThreadPack/infoPack/PackInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="ffed435d-3a92-42d0-b453-136f8cee015c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TownTools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TownToolsDistanse.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Apps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Apps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controlTownPack/ControllerPersonClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlTownPack/ControllerPersonClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controlTownPack/ControllerTownS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlTownPack/ControllerTownS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controlTownPack/CreateTownAndPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controlTownPack/CreateTownAndPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/PathsAndCellAdress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaces/PathsAndCellAdress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/readIO/CreateSecondPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/readIO/CreateSecondPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/readIO/CretatePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/readIO/CretatePost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/readIO/ErrorRead.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/readIO/ReadXlsx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/readIO/ReadXlsx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/runThreadPack/MoreTownThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/runThreadPack/RequesHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/runThreadPack/TownSearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/runThreadPack/TownSearchEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/townInfoPackega/TownT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/townInfoPackega/TownT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/writeIO/TempBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/runThreadPack/infoPack/TempBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/writeIO/WriteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/writeIO/WriteFile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622606898497</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="1.06.2021 test Ivanov">
+      <created>1622675970744</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1622675970744</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,11 +195,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="473" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1622673129205" />
-    <state x="614" y="128" key="CommitChangelistDialog2" timestamp="1622675851475">
+    <state x="614" y="128" key="CommitChangelistDialog2" timestamp="1622675969061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1306" y="133" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622390224394" />
-    <state x="614" y="128" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1622675851475" />
+    <state x="614" y="128" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1622675969061" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1622503117668">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
