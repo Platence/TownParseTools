@@ -1,8 +1,9 @@
 package readIO;
 
+import interfaces.PathsAndCellAdress;
 import townInfoPackega.Person;
 import townInfoPackega.TownT;
-import writeIO.TempBase;
+import runThreadPack.infoPack.TempBase;
 
 public class CretatePost {
 
@@ -17,11 +18,11 @@ public class CretatePost {
             sb.setLength(0);
         }
 
-        if(sb.toString().contains("ready")){
+        if(sb.toString().contains(PathsAndCellAdress.DEF_KEY_READY)){
             return "already=" + temp.getKm();
         }
 
-        String s6 = extendedWords(o2.getTown(),o2);
+        String s6 = o2.getTown();
 
         if(s6.contains("/")){
             s6 = "";
@@ -40,35 +41,4 @@ public class CretatePost {
         return sb.toString().replace(" ","+");
     }
 
-    public static String extendedWords(String town,TownT o2){
-
-        /*
-          Исключения
-         */
-
-        switch (town){
-            case "г.Белев" :           return " ";
-            case "д.Большая Еловая" :  return " ";
-            case "го.Брянск" :         return " ";
-            case "сп.Шаталовское" :    return " ";
-            case "с.Воскресенское" :   return " ";
-            case "г.Десногорск" :      return " ";
-            case "с.Ижевское" :        return " ";
-            case "г.Киреевск" :        return " ";
-            case "г.Скопин" :          return " ";
-            case "г.Малоярославец" :   return " ";
-            case "сп.Федоровское" :    return " ";
-            case "г.Новомичуринск" :   return " ";
-            case "с.Захарово" :        return " ";
-            case "г.Богородицк" :      return " ";
-            case "г.Рязань" :          return " ";
-            case "с.Архангельское" :   return " ";
-            case "с.Кудиново" :        return " ";
-            case "г.Рыбное" :        return " ";
-            case "д.Фролово" :        return " ";
-            case "г.Калуга" :        return " ";
-
-            default: return o2.getStreet();
-        }
-    }
 }

@@ -1,18 +1,15 @@
 import controlTownPack.CreateTownAndPerson;
-import readIO.ErrorRead;
-import runThreadPack.MoreTownThread;
 import runThreadPack.TownSearchEngine;
 import townInfoPackega.Person;
 import townInfoPackega.TownT;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Apps {
 
     public static void main(String[] args){
 
-      // startFirstHalf();
+       startFirstHalf();
 
       //  startSecondHalf();
 
@@ -48,20 +45,4 @@ public class Apps {
 
     }
 
-    public static void startSecondHalf(){
-
-        System.out.println("Открытие процедуры чтения ошибочных запросов");
-        ArrayList<StringBuilder> list = null;
-
-        try {
-            list = new ErrorRead().getList();
-        }
-
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("Ошибка, файл не найден");
-        }
-        MoreTownThread moreTownThread = new MoreTownThread(list);
-        moreTownThread.start();
-    }
 }

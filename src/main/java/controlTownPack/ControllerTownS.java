@@ -1,7 +1,6 @@
 package controlTownPack;
 
 import townInfoPackega.TownT;
-
 import java.util.ArrayList;
 
 public class ControllerTownS {

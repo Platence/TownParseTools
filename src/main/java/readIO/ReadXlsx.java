@@ -17,17 +17,18 @@ import java.util.Iterator;
 
 public class ReadXlsx {
 
-    public void openBook(final String path, ControllerTownS o) throws IOException, InterruptedException {
+    public void openBookTownOrPerson(final String path, ControllerTownS o) throws IOException, InterruptedException {
 
         System.out.println("Загрузка городов...");
-
-        Thread.sleep(500);
+        Thread.sleep(200);
 
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
-        Workbook wb = new XSSFWorkbook(fis);
 
+        Workbook wb = new XSSFWorkbook(fis);
         Sheet sheet = wb.getSheetAt(PathsAndCellAdress.SheetTownIndex);
+
+
         Iterator<Row> rows = sheet.rowIterator();
         int count = 0;
 
@@ -35,14 +36,20 @@ public class ReadXlsx {
             Row row = rows.next();
             if (row.getRowNum() > 0) {
 
+            try{
                 String s = row.getCell(PathsAndCellAdress.cellAreaCell).toString();
                 String s1 = row.getCell(PathsAndCellAdress.cellTownCell).toString();
                 String s2 = row.getCell(PathsAndCellAdress.cellStreet).toString();
                 // Can use StringBuilder
-                TownT townT = new TownT(s,"",s2,s1);
+                TownT townT = new TownT(s,s2,s1);
                 o.addPosition(townT);
-
                 count ++;
+            }
+                catch (NullPointerException e){
+                // ?
+                //System.out.println("NULL, continue...");
+            }
+
             }
         }
         wb.close();
@@ -51,19 +58,20 @@ public class ReadXlsx {
         System.out.println("Города загружены : Всего строк -  " + count);
     }
 
-    public void openBook(final String path, ControllerPersonClass o) throws IOException, InterruptedException {
+    public void openBookTownOrPerson(final String path, ControllerPersonClass o) throws IOException, InterruptedException {
 
         System.out.println("Загрузка сотрудников...");
 
-        Thread.sleep(1000);
+        Thread.sleep(100);
 
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
+
         Workbook wb = new XSSFWorkbook(fis);
-
         Sheet sheet = wb.getSheetAt(PathsAndCellAdress.sheetPersonIndex);
-        Iterator<Row> rows = sheet.rowIterator();
 
+
+        Iterator<Row> rows = sheet.rowIterator();
         int count = 0;
 
         while (rows.hasNext()) {
@@ -84,7 +92,6 @@ public class ReadXlsx {
 
             }
         }
-
         wb.close();
         fis.close();
 

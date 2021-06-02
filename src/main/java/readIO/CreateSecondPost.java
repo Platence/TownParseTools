@@ -1,34 +1,46 @@
 package readIO;
-import java.util.Map;
+import runThreadPack.EngineEx;
+
 
 public class CreateSecondPost {
 
-    public String gerExtendRequest(StringBuilder sb,int index){
+    public String deleteOneChar(String sb,EngineEx ex){
 
-        /**
-         * Убираем по 1 символу с конца, пока запрос не будет валидным
-         */
+        try {
+            System.out.println("Попытка убрать символ : запрос для строки " + sb);
+            System.out.println("Сотрудник : " + ex.getPerson().getName());
+            ex.setCountREQ(ex.getCountREQ() + 1);
 
-        String mas [] = sb.toString().split("\\*");
-        String resulutReturn = mas[1].substring(0,mas[1].length()-index);
-        System.out.println("Попытка содзать запрос для строки");
-        System.out.println(resulutReturn);
-        System.out.println("---------------");
-        return resulutReturn;
+            String[] mas = sb.split("/");
+            int index = mas.length-1;
+            // индекс последнего слова
 
-    }
+            String resulutReturn = mas[index].substring(0,mas[index].length() - 2);
+            // Получим последнее слово
+            // без одного символа с конца
 
-    public String getPersonFromErrorMessage(StringBuilder sb){
-        //Возвращает сотрудника
-        String mas [] = sb.toString().split("\\*");
-        return mas[0];
-    }
+            StringBuilder sbb = new StringBuilder();
+            // Сборка в запрос обратно
 
-    public String getAdressstatic(StringBuilder sb){
-        //Возвращает сотрудника
-        String mas [] = sb.toString().split("\\*");
-        String mas2 [] = mas[1].split("/");
-        return mas2[mas2.length-1].replace("+"," ");
+            for(int i = 0 ; i < mas.length-1; i ++){
+                sbb.append(mas[i]);
+                sbb.append("/");
+            }
+
+            sbb.append(resulutReturn);
+
+            System.out.println("WORK! " + sbb.toString());
+            System.out.println("+++++++++++++++++++++++");
+            return sbb.toString();
+        }
+
+        catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Ошибка 565GGE");
+            e.printStackTrace();
+        }
+
+        return sb;
+
     }
 
 }

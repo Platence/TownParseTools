@@ -1,4 +1,6 @@
-package writeIO;
+package runThreadPack.infoPack;
+
+import interfaces.PathsAndCellAdress;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -28,7 +30,7 @@ public class TempBase {
     public static String getWordAlready(TempBase t){
 
         if(t.getMoveToCity().contains(t.getDefoltCity())){
-            t.setKm("10");
+            t.setKm(PathsAndCellAdress.DEF_KM_TOWN_OWN);
             list.add(t);
             return keyWord+ "="+t.getKm();
             // Если сотрудник проживает в городе назначения
@@ -47,7 +49,6 @@ public class TempBase {
         list.add(t);
         return keyWordEXT;
     }
-
 
     public String getDefoltCity() {
         return defoltCity;

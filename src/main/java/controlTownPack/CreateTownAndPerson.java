@@ -14,12 +14,12 @@ public class CreateTownAndPerson {
     }
 
     private void generateTown(ControllerTownS o){
+
         ReadXlsx readXlsx = new ReadXlsx();
-        try {
-            readXlsx.openBook(PathsAndCellAdress.path,o);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+
+        try { readXlsx.openBookTownOrPerson(PathsAndCellAdress.PATH_READ_FILE,o); }
+
+        catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -34,10 +34,10 @@ public class CreateTownAndPerson {
 
         ReadXlsx readXlsx = new ReadXlsx();
         try {
-            readXlsx.openBook(PathsAndCellAdress.path,o);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+            readXlsx.openBookTownOrPerson(PathsAndCellAdress.PATH_READ_FILE,o);
+        }
+
+        catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
