@@ -47,7 +47,7 @@ public class TownSearchEngine extends Thread{
                     result.setLength(0);String kmkm = "";
 
                     TempBase temp = new TempBase(this.person.getDefoltcity(),
-                            town.getArea()+town.getTown()+town.getStreet());
+                            town.getTown()+town.getStreet());
 
                     String request = CretatePost.getpostFromTown(person, town,temp);
 
