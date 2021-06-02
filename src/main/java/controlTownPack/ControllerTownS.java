@@ -1,5 +1,6 @@
 package controlTownPack;
 
+import com.sun.istack.internal.NotNull;
 import townInfoPackega.TownT;
 import java.util.ArrayList;
 
@@ -12,6 +13,7 @@ public class ControllerTownS {
     }
 
     public boolean addPosition(TownT town){
+
         if(allTown.contains(town)){
             return false;
         }
@@ -20,7 +22,6 @@ public class ControllerTownS {
     }
 
     public ArrayList<TownT> getAllList(){
-
         return new ArrayList(allTown);
     }
 
