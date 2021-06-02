@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffed435d-3a92-42d0-b453-136f8cee015c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Apps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Apps.java" afterDir="false" />
-    </list>
+    <list default="true" id="ffed435d-3a92-42d0-b453-136f8cee015c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +36,7 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="TownDistance" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Apps" />
       <module name="TownToolsDistanse" />
       <method v="2">
@@ -153,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622676016428</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1.06.2021 test Ivanov">
+      <created>1622676065708</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1622676065708</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,10 +185,11 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-1179" y="136" key="#Project_Structure/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622386760176" />
-    <state x="-1506" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622387898852">
-      <screen x="-1920" y="0" width="1920" height="1080" />
+    <state x="414" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622676083893">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1506" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622387898852" />
+    <state x="414" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1622676083893" />
     <state x="765" y="246" key="#com.intellij.ide.util.MemberChooser" timestamp="1622674902126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -201,11 +207,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="473" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1622673129205" />
-    <state x="614" y="128" key="CommitChangelistDialog2" timestamp="1622676015771">
+    <state x="614" y="128" key="CommitChangelistDialog2" timestamp="1622676065045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1306" y="133" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1622390224394" />
-    <state x="614" y="128" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1622676015771" />
+    <state x="614" y="128" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1622676065045" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1622503117668">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
