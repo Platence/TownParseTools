@@ -25,7 +25,6 @@ public class TownSearchEngine extends Thread{
         this.listTown = listTown;
     }
 
-
     @Override
     public void run(){
         try {

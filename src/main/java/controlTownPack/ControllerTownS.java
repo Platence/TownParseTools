@@ -1,6 +1,5 @@
 package controlTownPack;
 
-import com.sun.istack.internal.NotNull;
 import townInfoPackega.TownT;
 import java.util.ArrayList;
 
