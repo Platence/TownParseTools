@@ -6,7 +6,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
 import runThreadPack.EngineEx;
-import runThreadPack.infoPack.PackInfo;
+import writeIO.WriteFile;
 
 import java.io.IOException;
 
@@ -29,12 +29,11 @@ public class InernS {
 
         HttpGet httpGet;
         HttpResponse httpResponse = null;
-
         httpGet = new HttpGet(request);
+
         try {
             httpResponse = httpClient.execute(httpGet);
         }
-
         catch (IOException e) {
             e.printStackTrace();
         }
@@ -43,6 +42,8 @@ public class InernS {
 
         try {
             body = EntityUtils.toString(httpResponse.getEntity());
+            new WriteFile().saveRequest(request+ "  : " + ex.getPerson().getName());
+            // LOG REQ!
             String[] parLev1 = body.split(PathsAndCellAdress.DEF_KEY_KEY);
             return parLev1;
         }

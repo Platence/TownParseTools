@@ -24,15 +24,14 @@ public class EngineEx {
 
     public void getReqqAll(HttpClient httpClient,StringBuilder result, TownT town) {
 
-        TempBase temp = new TempBase(this.getPerson().getDefoltcity(),town.getTown() + town.getStreet());
-        String request = CretatePost.getpostFromTown(this.getPerson(), town, temp);
+        TempBase temp =  new TempBase(this.getPerson().getDefoltcity(),town.getTown() + town.getStreet());
+        String request = new CretatePost().getpostFromTown(this.getPerson(), town, temp);
 
         while (true) {
-            result.setLength(0);String kmkm = "";
+            result.setLength(0);
+            String kmkm = "";
 
-            if(new InernS().stopReq(request,this)){
-                break;
-            }
+            if(new InernS().stopReq(request,this)){ break; }
 
             if(!request.contains(PathsAndCellAdress.DEF_KEY_READY)) {
                 try {
@@ -47,7 +46,7 @@ public class EngineEx {
                     new PackInfo(getPerson(),this).parseMeta(parLev1, result);
                     kmkm = result.reverse().toString();
                     if (kmkm.length() > PathsAndCellAdress.MAX_LENGTH_MES) {
-                        kmkm = PathsAndCellAdress.defaultKM;
+                        kmkm = PathsAndCellAdress.DEFAULT_KM;
                         // Error - write in file how -99999
                     }
                     temp.setKm(kmkm);

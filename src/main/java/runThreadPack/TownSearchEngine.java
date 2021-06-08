@@ -11,7 +11,7 @@ import java.util.Collections;
 public class TownSearchEngine extends Thread{
 
     /**
-     * Класс подразумевает обработку до 1000+ запросов в отдельном потоке
+     * Класс подразумевает обработку запросов в отдельном потоке
      * для каждой персоны
      * Ожидается проверка на существующий запрос (город проживания) в стороннем классе
      * В таком случае расстояние присвоится сразу же
@@ -42,7 +42,6 @@ public class TownSearchEngine extends Thread{
         }
 
     }
-
 
     public ArrayList<TownT> getListTown() {
         Collections.shuffle(listTown);

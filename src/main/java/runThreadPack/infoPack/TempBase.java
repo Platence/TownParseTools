@@ -8,12 +8,13 @@ import java.util.Objects;
 public class TempBase {
 
     /**
-     * Некоторые сотрудники живут в одном и том же городе, поэтому для них сразу вернем результат
+     * Некоторые сотрудники живут в одном и том же городе,
+     * поэтому для них сразу вернем результат
      * Ключевое слово - already=километры
      */
 
-    private static final String keyWord = "already";
-    private static final String keyWordEXT = "NON";
+    private static final String KEY_WORD = "already";
+    private static final String KEY_WORD_EXT = "NON";
 
     private String defoltCity;
     private String moveToCity;
@@ -32,7 +33,7 @@ public class TempBase {
         if(t.getMoveToCity().contains(t.getDefoltCity())){
             t.setKm(PathsAndCellAdress.DEF_KM_TOWN_OWN);
             list.add(t);
-            return keyWord+ "="+t.getKm();
+            return KEY_WORD + "="+t.getKm();
             // Если сотрудник проживает в городе назначения
             // То он проедет в среднем 20 км (результат *2)
         }
@@ -42,12 +43,12 @@ public class TempBase {
                 if(temp.getMoveToCity().equals(t.getMoveToCity())){
                     if(temp.getKm().equals("-9999")){break;}
                     t.setKm(temp.getKm());
-                    return keyWord + "=" + t.getKm();
+                    return KEY_WORD + "=" + t.getKm();
                 }
             }
         }
         list.add(t);
-        return keyWordEXT;
+        return KEY_WORD_EXT;
     }
 
     public String getDefoltCity() {

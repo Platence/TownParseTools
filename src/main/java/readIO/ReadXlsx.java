@@ -26,7 +26,7 @@ public class ReadXlsx {
         FileInputStream fis = new FileInputStream(file);
 
         Workbook wb = new XSSFWorkbook(fis);
-        Sheet sheet = wb.getSheetAt(PathsAndCellAdress.SheetTownIndex);
+        Sheet sheet = wb.getSheetAt(PathsAndCellAdress.SHEET_TOWN_INDEX);
 
 
         Iterator<Row> rows = sheet.rowIterator();
@@ -37,11 +37,13 @@ public class ReadXlsx {
             if (row.getRowNum() > 0) {
 
             try{
-                String s = row.getCell(PathsAndCellAdress.cellAreaCell).toString();
-                String s1 = row.getCell(PathsAndCellAdress.cellTownCell).toString();
-                String s2 = row.getCell(PathsAndCellAdress.cellStreet).toString();
+                String s  = row.getCell(PathsAndCellAdress.CELL_AREA_CELL).toString();
+                String s1 = row.getCell(PathsAndCellAdress.CELL_TOWN_CELL).toString();
+                String s2 = row.getCell(PathsAndCellAdress.CELL_STREET).toString();
+                String index = doubleToString(row.getCell(PathsAndCellAdress.CELL_INDEX).toString());
                 // Can use StringBuilder
-                TownT townT = new TownT(s,s2,s1);
+
+                TownT townT = new TownT(s,s2,s1,index);
                 o.addPosition(townT);
                 count ++;
             }
@@ -68,7 +70,7 @@ public class ReadXlsx {
         FileInputStream fis = new FileInputStream(file);
 
         Workbook wb = new XSSFWorkbook(fis);
-        Sheet sheet = wb.getSheetAt(PathsAndCellAdress.sheetPersonIndex);
+        Sheet sheet = wb.getSheetAt(PathsAndCellAdress.SHEET_PERSON_INDEX);
 
 
         Iterator<Row> rows = sheet.rowIterator();
@@ -78,8 +80,8 @@ public class ReadXlsx {
             Row row = rows.next();
             if (row.getRowNum() > 0) {
                 try {
-                    String s = row.getCell(PathsAndCellAdress.cellFirtstName).toString();
-                    String s1 = row.getCell(PathsAndCellAdress.cellDefoltCity).toString();
+                    String s = row.getCell(PathsAndCellAdress.CELL_FIRTST_NAME).toString();
+                    String s1 = row.getCell(PathsAndCellAdress.CELL_DEFOLT_CITY).toString();
                     // Can use StringBuilder
                     Person person = new Person(s,s1);
                     o.addPosition(person);
@@ -96,6 +98,16 @@ public class ReadXlsx {
         fis.close();
 
         System.out.println("Сотрудники загружены : Всего строк -  " + count);
+    }
+
+    private static String doubleToString(String index){
+        try{
+        String[] s = index.split("\\.");
+        return s[0];
+        }
+        catch (Exception e){
+            return index;
+        }
     }
 
 }

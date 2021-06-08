@@ -11,7 +11,24 @@ public class WriteFile {
 
     public void saveFile(Person person,String result) throws IOException {
 
-        File f = new File(PathsAndCellAdress.pathSaves +person.getName()+".txt");
+        File f = new File(PathsAndCellAdress.PATH_SAVES +person.getName()+".txt");
+        if(!f.exists()){
+            try {
+                f.createNewFile();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        FileWriter fw = new FileWriter(f,true);
+        fw.write(result);
+
+        fw.close();
+    }
+
+    public void saveError(String result) throws IOException {
+
+        File f = new File(PathsAndCellAdress.PATH_SAVES +"ERRORS"+".txt");
         if(!f.exists()){
             try {
                 f.createNewFile();
@@ -27,9 +44,10 @@ public class WriteFile {
         fw.close();
     }
 
-    public void saveError(String result) throws IOException {
+    public void saveRequest(String result) throws IOException {
 
-        File f = new File(PathsAndCellAdress.pathSaves+"ERRORS"+".txt");
+        File f = new File(PathsAndCellAdress.PATH_SAVES +"REQUEST"+".txt");
+        result+=System.lineSeparator();
         if(!f.exists()){
             try {
                 f.createNewFile();
@@ -38,7 +56,6 @@ public class WriteFile {
                 e.printStackTrace();
             }
         }
-
         FileWriter fw = new FileWriter(f,true);
         fw.write(result);
 

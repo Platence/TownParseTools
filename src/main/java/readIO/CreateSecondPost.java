@@ -4,6 +4,14 @@ import runThreadPack.EngineEx;
 
 public class CreateSecondPost {
 
+    /**
+     * В случае ошибки запроса (Включите JavaScript)
+     * Вернуть запрос без 1 символа с конца строки
+     * @param sb
+     * @param ex
+     * @return
+     */
+
     public String deleteOneChar(String sb,EngineEx ex){
 
         try {
@@ -11,35 +19,15 @@ public class CreateSecondPost {
             System.out.println("Сотрудник : " + ex.getPerson().getName());
             ex.setCountREQ(ex.getCountREQ() + 1);
 
-            String[] mas = sb.split("/");
-            int index = mas.length-1;
-            // индекс последнего слова
-
-            String resulutReturn = mas[index].substring(0,mas[index].length() - 2);
-            // Получим последнее слово
-            // без одного символа с конца
-
-            StringBuilder sbb = new StringBuilder();
-            // Сборка в запрос обратно
-
-            for(int i = 0 ; i < mas.length-1; i ++){
-                sbb.append(mas[i]);
-                sbb.append("/");
-            }
-
-            sbb.append(resulutReturn);
-
-            System.out.println("WORK! " + sbb.toString());
-            System.out.println("+++++++++++++++++++++++");
-            return sbb.toString();
+            String result = sb.substring(0,sb.length()-1);
+            System.out.println("Возвращен результат :");
+            System.out.println(result);
+            return result;
         }
-
-        catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Ошибка 565GGE");
+        catch (Exception e){
             e.printStackTrace();
+            return "ERROR!";
         }
-
-        return sb;
 
     }
 
