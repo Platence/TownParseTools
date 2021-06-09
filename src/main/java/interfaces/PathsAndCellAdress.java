@@ -2,8 +2,8 @@ package interfaces;
 
 public class PathsAndCellAdress {
 
-    public final static String PATH_READ_FILE = "?????";
-    public static final String PATH_SAVES = "?????";
+    public final static String PATH_READ_FILE = "C:\\Stress_Test\\График\\06 График ПИ ТМЦ НЧД июнь.xlsx";
+    public static final String PATH_SAVES = "D:\\DOPMETA\\";
     // Type your path to FILE
 
     public static final int SHEET_TOWN_INDEX = 3;
