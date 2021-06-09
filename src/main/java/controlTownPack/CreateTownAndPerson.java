@@ -20,6 +20,7 @@ public class CreateTownAndPerson {
         try { readXlsx.openBookTownOrPerson(PathsAndCellAdress.PATH_READ_FILE,o); }
 
         catch (IOException | InterruptedException e) {
+            System.out.println("Error with reading file " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -38,6 +39,7 @@ public class CreateTownAndPerson {
         }
 
         catch (IOException | InterruptedException e) {
+            System.out.println("Error with reading file " + e.getMessage());
             e.printStackTrace();
         }
     }

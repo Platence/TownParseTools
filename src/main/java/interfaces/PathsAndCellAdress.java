@@ -2,8 +2,8 @@ package interfaces;
 
 public class PathsAndCellAdress {
 
-    public final static String PATH_READ_FILE = "C:\\Stress_Test\\График\\06 График ПИ ТМЦ НЧД июнь.xlsx";
-    public static final String PATH_SAVES = "D:\\DOPMETA\\";
+    public final static String PATH_READ_FILE = "YOUR XLSX PATH";
+    public static final String PATH_SAVES = "PATH_RESULT_SAVE";
     // Type your path to FILE
 
     public static final int SHEET_TOWN_INDEX = 3;
@@ -19,7 +19,7 @@ public class PathsAndCellAdress {
     public static final int MAX_TRY_REQ    = 15;
     public static final String DEFAULT_KM = "-99999";
 
-    public static final String DEF_KEY_ERROR   = "Включите JavaScript";
+    public static final String DEF_KEY_ERROR   = "Включите JavaScript"; // Danger use this word!
     public static final String DEF_KEY_KEY     = "км";                  // Danger use this word!
     public static final String DEF_KEY_READY   = "ready";
     public static final String DEF_KM_TOWN_OWN = "10";
